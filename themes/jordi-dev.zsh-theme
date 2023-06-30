@@ -1,0 +1,33 @@
+NEWLINE=$'\n'
+
+HOSTNAME_COLOR="${BG[006]}${FG[016]}"
+HOSTNAME="${HOSTNAME_COLOR} %m %{$reset_color%}"
+
+ROUTE_COLOR="${BG[002]}${FG[016]}"
+ROUTE="%B${ROUTE_COLOR} %~ %{$reset_color%}%b"
+
+GIT_COLOR="${BG[005]}${FG[016]}"
+GIT="%B${GIT_COLOR} \$(git_prompt_info) %{$reset_color%}%b"
+GIT_STATUS="\$(git_prompt_status)"
+
+SEP_CHAR="◤"
+SEP_HOSTNAME_ROUTE="${FG[006]}${BG[002]}${SEP_CHAR}%{$reset_color%}"
+SEP_ROUTE_GIT="${FG[002]}${BG[005]}${SEP_CHAR}%{$reset_color%}"
+SEP_GIT_END="${FG[005]}${SEP_CHAR}%{$reset_color%}"
+
+PROMPT="${HOSTNAME}${SEP_HOSTNAME_ROUTE}${ROUTE}${SEP_ROUTE_GIT}${GIT}${SEP_GIT_END}${GIT_STATUS}${NEWLINE}%{%(?.${FG[011]}.${FG[160]})%}ᐅ%{$reset_color%} "
+
+ZSH_THEME_GIT_PROMPT_PREFIX=""
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_DIRTY=""
+ZSH_THEME_GIT_PROMPT_CLEAN=""
+
+ZSH_THEME_GIT_PROMPT_ADDED="${FG[082]}✚%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_MODIFIED="${FG[166]}✹%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DELETED="${FG[160]}✖%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_RENAMED="${FG[220]}➜%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNMERGED="${FG[082]}═%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="${FG[190]}✭%{$reset_color%}"
+
+ZSH_THEME_VIRTUALENV_PREFIX="["
+ZSH_THEME_VIRTUALENV_SUFFIX="]"
